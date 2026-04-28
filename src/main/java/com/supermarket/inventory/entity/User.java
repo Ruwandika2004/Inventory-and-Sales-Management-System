@@ -3,7 +3,7 @@ package com.supermarket.inventory.entity;
 public abstract class User {
     private String username;
     private String password;
-    private String role; // "ADMIN" or "STAFF"
+    private String role;
 
     public User() {
     }
