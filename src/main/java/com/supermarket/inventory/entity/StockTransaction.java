@@ -16,7 +16,7 @@ public class StockTransaction {
         this.productId     = productId;
         this.quantity      = quantity;
         this.type          = type;
-        this.timestamp     = LocalDateTime.now();
+        this.timestamp     =  LocalDateTime.now();
     }
 
     public String getTransactionId()                   { return transactionId; }
