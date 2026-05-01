@@ -1,0 +1,70 @@
+========================================================================
+FULL GIT WORKFLOW GUIDE (IntelliJ + GitHub)
+Repository Name: inventory-and-sales-management-system
+========================================================================
+
+STEP 1: PREPARE YOUR WORKING FOLDER
+------------------------------------------------------------------------
+1. Do NOT rename or delete your current 'supermarket_system' folder! 
+   Keep it exactly as it is (this is your finished answer key).
+2. Create a brand new, empty folder on your Desktop named:
+   'supermarket_system_progression'
+3. Open IntelliJ IDEA -> File -> Open -> select 'supermarket_system_progression'.
+
+STEP 2: INITIALIZE & CONNECT GIT
+------------------------------------------------------------------------
+1. At the bottom of IntelliJ, click on the "Terminal" tab.
+2. Run the following command to initialize Git:
+   git init
+
+3. Rename your default branch to 'main':
+   git branch -M main
+
+4. Connect your local folder to your GitHub repository:
+   (Replace 'YOUR_USERNAME' with your actual GitHub username!)
+   git remote add origin https://github.com/YOUR_USERNAME/inventory-and-sales-management-system.git
+
+STEP 3: THE DAILY WORKFLOW (Creating a Feature Branch)
+------------------------------------------------------------------------
+** Never work directly on 'main'. Always create a branch first! **
+
+1. Create a new branch for the day's work and switch to it:
+   git checkout -b feature/day-1-user-setup
+
+2. Open your original 'supermarket_system' folder, copy the Day 1 files 
+   (pom.xml, application.properties, User.java variables), and paste 
+   them into your new 'supermarket_system_progression' folder.
+
+3. Add all the new files to Git:
+   git add .
+
+4. Commit the files with a descriptive message:
+   git commit -m "Day 1: Initial project setup and User entity structure"
+
+5. Push your new branch to GitHub:
+   git push -u origin feature/day-1-user-setup
+
+STEP 4: MERGING ON GITHUB (Pull Request)
+------------------------------------------------------------------------
+1. Open your web browser and go to your GitHub repository page.
+2. You will see a green button that says "Compare & pull request". Click it!
+3. Add a title, then click the green "Create pull request" button.
+4. Click the green "Merge pull request" button.
+5. Click "Confirm merge".
+   (Your code is now officially saved into the 'main' branch on GitHub!)
+
+STEP 5: SYNC YOUR COMPUTER WITH GITHUB
+------------------------------------------------------------------------
+Now that the code is merged on GitHub, you need to update your computer.
+
+1. Go back to your IntelliJ Terminal and switch back to the main branch:
+   git checkout main
+
+2. Download the merged code from GitHub:
+   git pull
+
+========================================================================
+REPEAT STEPS 3 TO 5 EVERY DAY!
+For Day 2, you would run: git checkout -b feature/day-2-subclasses, copy 
+the Day 2 files, add, commit, push, merge on GitHub, and pull back to main.
+========================================================================

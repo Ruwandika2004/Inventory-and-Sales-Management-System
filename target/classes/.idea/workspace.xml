@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e70cc065-5d0d-49a9-a5d4-087c435dfdea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/SupermarketApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/controller/ReportController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/controller/SalesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/controller/StockController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/controller/SupplierController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/Electronics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/InternationalSupplier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/Invoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/LocalSupplier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/PerishableProduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/Report.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/RetailOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/SalesReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/Staff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/StockReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/StockTransaction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/Supplier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/entity/WholesaleOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/OrderRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/ProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/StockTransactionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/SupplierRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/TxtOrderRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/TxtProductRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/TxtStockTransactionRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/TxtSupplierRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/TxtUserRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/service/ReportService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/service/SalesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/service/StockService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/service/SupplierService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/supermarket/inventory/service/UserService.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3CkQw8LeAnCwxhjBwv8gNDpNkem" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SupermarketApplication.executor": "Run",
+    "Maven.inventory [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "Spring Boot.SupermarketApplication.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "report",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ASUS/OneDrive/Desktop/supermarket_system/supermarket_system",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="SupermarketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="inventory" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.supermarket.inventory.SupermarketApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.supermarket.inventory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e70cc065-5d0d-49a9-a5d4-087c435dfdea" name="Changes" comment="" />
+      <created>1776927326486</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776927326486</updated>
+    </task>
+    <servers />
+  </component>
+</project>

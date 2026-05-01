@@ -1,0 +1,2 @@
+ADMIN|admin|admin123|||
+CUSTOMER|sandeepa|200415303515|ruwandikasandeepa2004@gmail.com|0718125693|REGULAR

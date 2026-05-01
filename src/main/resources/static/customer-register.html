@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart — Customer Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { flex-direction: column !important; background: #0f172a; }
+        .auth-switch { text-align:center; margin-top:18px; font-size:14px; color:var(--text-muted); }
+        .auth-switch a { color:var(--accent); font-weight:600; text-decoration:none; }
+        .auth-switch a:hover { text-decoration:underline; }
+        .membership-cards { display:flex; gap:10px; margin-top:6px; }
+        .membership-card { flex:1; border:2px solid var(--border); border-radius:10px;
+                           padding:12px; cursor:pointer; transition:.2s; text-align:center; }
+        .membership-card:hover { border-color:var(--accent); }
+        .membership-card.selected { border-color:var(--accent); background:rgba(99,102,241,.08); }
+        .membership-card .m-icon { font-size:22px; display:block; margin-bottom:4px; }
+        .membership-card .m-label { font-size:13px; font-weight:600; color:var(--text-primary); }
+        .membership-card .m-desc { font-size:11px; color:var(--text-muted); margin-top:2px; }
+    </style>
+</head>
+<body>
+    <div class="auth-container" style="padding: 30px 0;">
+        <div class="auth-box" style="max-width:460px;">
+            <div class="auth-top">
+                <div class="auth-logo">🛍️</div>
+                <h1>Create Account</h1>
+                <p>Join FreshMart as a customer</p>
+            </div>
+            <div class="auth-form-inner">
+                <form onsubmit="register(event)">
+                    <div class="input-group">
+                        <label>Username</label>
+                        <input type="text" id="username" placeholder="e.g. john_doe" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="password" placeholder="Create a password" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" placeholder="e.g. 0771234567" required>
+                    </div>
+                    <div class="input-group mb-0">
+                        <label>Membership Type</label>
+                        <div class="membership-cards">
+                            <div class="membership-card selected" id="card-regular" onclick="selectMembership('REGULAR')">
+                                <span class="m-icon">🌿</span>
+                                <div class="m-label">Regular</div>
+                                <div class="m-desc">Standard access</div>
+                            </div>
+                            <div class="membership-card" id="card-premium" onclick="selectMembership('PREMIUM')">
+                                <span class="m-icon">⭐</span>
+                                <div class="m-label">Premium</div>
+                                <div class="m-desc">Exclusive discounts</div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="membershipType" value="REGULAR">
+                    </div>
+
+                    <div class="error-msg" id="error-msg" style="display:none;"></div>
+                    <div class="success-msg" id="success-msg" style="display:none;color:#22c55e;font-size:14px;text-align:center;margin-top:12px;"></div>
+
+                    <button type="submit" class="btn btn-primary w-full mt-16" style="justify-content:center;">
+                        Create My Account
+                    </button>
+                </form>
+                <div class="auth-switch">Already have an account? <a href="index.html">Sign in</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectMembership(type) {
+            document.getElementById('membershipType').value = type;
+            document.getElementById('card-regular').classList.toggle('selected', type === 'REGULAR');
+            document.getElementById('card-premium').classList.toggle('selected', type === 'PREMIUM');
+        }
+
+        async function register(e) {
+            e.preventDefault();
+            const err = document.getElementById('error-msg');
+            const suc = document.getElementById('success-msg');
+            err.style.display = 'none';
+            suc.style.display = 'none';
+
+            const payload = {
+                username:       document.getElementById('username').value.trim(),
+                password:       document.getElementById('password').value,
+                email:          document.getElementById('email').value.trim(),
+                phone:          document.getElementById('phone').value.trim(),
+                membershipType: document.getElementById('membershipType').value
+            };
+
+            try {
+                const res = await fetch('http://localhost:8080/api/users/customers/register', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(payload)
+                });
+                if (res.ok) {
+                    suc.textContent = '✅ Account created! Redirecting to login…';
+                    suc.style.display = 'block';
+                    setTimeout(() => window.location.href = 'index.html', 1800);
+                } else {
+                    err.textContent = 'Registration failed. Username may already exist.';
+                    err.style.display = 'block';
+                }
+            } catch (ex) {
+                err.textContent = 'Cannot reach server — please start the Spring Boot app.';
+                err.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
