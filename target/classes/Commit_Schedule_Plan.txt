@@ -1,0 +1,87 @@
+========================================================================
+SUPERMARKET SYSTEM - PROGRESSIVE COMMIT SCHEDULE
+Goal: Reach 30% organic completion by May 4th (University Submission)
+========================================================================
+
+IMPORTANT INSTRUCTIONS:
+1. Do NOT rename your current 'supermarket_system' folder! Keep it safe. It is your finished key.
+2. Create a new empty folder on your desktop named 'supermarket_system_progression' and open it in IntelliJ.
+3. Open Terminal in IntelliJ and run: git init
+4. Every day, copy ONLY the specified code from your original 'supermarket_system' folder to your new 'supermarket_system_progression' folder and run the Git commands.
+
+------------------------------------------------------------------------
+DAY 1 (April 28): Setup & Base Entity
+------------------------------------------------------------------------
+Action:
+- Copy pom.xml and application.properties.
+- Create User.java but ONLY copy the variables (username, password, role).
+- DO NOT copy getters, setters, or constructors yet.
+
+Command:
+git add .
+git commit -m "Initial project setup and User entity structure"
+
+------------------------------------------------------------------------
+DAY 2 (April 29): Complete Entities & Subclasses
+------------------------------------------------------------------------
+Action:
+- Copy the getters, setters, and constructors into User.java.
+- Copy Admin.java and Customer.java completely.
+
+Command:
+git add .
+git commit -m "Added getters/setters and created Admin/Customer subclasses"
+
+------------------------------------------------------------------------
+DAY 3 (April 30): Start File I/O (Read Logic)
+------------------------------------------------------------------------
+Action:
+- Create TxtUserRepositoryImpl.java.
+- ONLY copy the loadUsers() method (the reading part). Leave the saving part empty.
+
+Command:
+git add .
+git commit -m "Started working on File I/O reading for Users"
+
+------------------------------------------------------------------------
+DAY 4 (May 1): Finish File I/O (Write Logic)
+------------------------------------------------------------------------
+Action:
+- Copy the rest of TxtUserRepositoryImpl.java (the saving/updating part).
+- Copy users.txt into the data folder.
+
+Command:
+git add .
+git commit -m "Completed User file persistence logic"
+
+------------------------------------------------------------------------
+DAY 5 (May 2): Business Logic Service
+------------------------------------------------------------------------
+Action:
+- Copy UserService.java completely.
+
+Command:
+git add .
+git commit -m "Added User service layer for business logic"
+
+------------------------------------------------------------------------
+DAY 6 (May 3): Frontend Basic UI
+------------------------------------------------------------------------
+Action:
+- Copy index.html and css/style.css.
+
+Command:
+git add .
+git commit -m "Started UI design for Login page"
+
+------------------------------------------------------------------------
+DAY 7 (May 4): Backend Controller Integration (30% MILESTONE)
+------------------------------------------------------------------------
+Action:
+- Copy UserController.java.
+- Your login system is now fully connected from backend to frontend.
+
+Command:
+git add .
+git commit -m "Integrated Login API with frontend"
+------------------------------------------------------------------------

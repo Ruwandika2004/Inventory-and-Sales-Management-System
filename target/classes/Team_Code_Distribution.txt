@@ -1,0 +1,215 @@
+SUPERMARKET SYSTEM — CODE DISTRIBUTION (6 Members, No MySQL)
+
+Stack: Spring Boot Web + File I/O (.txt) — No MySQL
+Base path: src/main/java/com/supermarket/inventory/
+
+================================================================================
+
+👥 MEMBER OVERVIEW
+
+1. Member 1: User & Customer Management (6 Java files, 6 HTML files, 1 Data file)
+2. Member 2: Product Management (5 Java files, 3 HTML files, 1 Data file)
+3. Member 3: Stock Management (4 Java files, 3 HTML files, 1 Data file)
+4. Member 4: Supplier Management (5 Java files, 3 HTML files, 1 Data file)
+5. Member 5: Sales & Order Management (6 Java files, 3 HTML files, 2 Data files)
+6. Member 6: Reports & Analytics (3 Java files, 1 HTML file, 1 Data file)
+-  Shared: App Config & Entry Point (3 Java files, 1 HTML file)
+
+================================================================================
+
+🔵 MEMBER 1 — USER & CUSTOMER MANAGEMENT 👤
+Responsibilities: Admin/Customer User registration & login, Customer Profile, User Lists.
+
+Files to Commit:
+- entity/User.java
+- entity/Admin.java
+- entity/Customer.java
+- repository/TxtUserRepositoryImpl.java
+- service/UserService.java
+- controller/UserController.java
+- static/admin-dashboard.html
+- static/customer-register.html
+- static/customer-profile.html
+- static/customer-list.html
+- static/user-list.html
+- static/user-edit.html
+- data/users.txt
+
+Git Commands:
+git add src/main/java/com/supermarket/inventory/entity/User.java
+git add src/main/java/com/supermarket/inventory/entity/Admin.java
+git add src/main/java/com/supermarket/inventory/entity/Customer.java
+git add src/main/java/com/supermarket/inventory/repository/TxtUserRepositoryImpl.java
+git add src/main/java/com/supermarket/inventory/service/UserService.java
+git add src/main/java/com/supermarket/inventory/controller/UserController.java
+git add src/main/resources/static/admin-dashboard.html
+git add src/main/resources/static/customer-register.html
+git add src/main/resources/static/customer-profile.html
+git add src/main/resources/static/customer-list.html
+git add src/main/resources/static/user-list.html
+git add src/main/resources/static/user-edit.html
+git add src/main/resources/data/users.txt
+git commit -m "Member 1: User/Customer Management Module - Auth & CRUD"
+
+================================================================================
+
+🟢 MEMBER 2 — PRODUCT MANAGEMENT MODULE 📦
+Responsibilities: Add/update/delete products, Category management (Electronics, Perishable)
+
+Files to Commit:
+- entity/Product.java
+- entity/Electronics.java
+- entity/PerishableProduct.java
+- repository/TxtProductRepositoryImpl.java
+- service/ProductService.java
+- controller/ProductController.java
+- static/product-list.html
+- static/product-add.html
+- static/product-edit.html
+- data/products.txt
+
+Git Commands:
+git add src/main/java/com/supermarket/inventory/entity/Product.java
+git add src/main/java/com/supermarket/inventory/entity/Electronics.java
+git add src/main/java/com/supermarket/inventory/entity/PerishableProduct.java
+git add src/main/java/com/supermarket/inventory/repository/TxtProductRepositoryImpl.java
+git add src/main/java/com/supermarket/inventory/service/ProductService.java
+git add src/main/java/com/supermarket/inventory/controller/ProductController.java
+git add src/main/resources/static/product-list.html
+git add src/main/resources/static/product-add.html
+git add src/main/resources/static/product-edit.html
+git add src/main/resources/data/products.txt
+git commit -m "Member 2: Product Management Module - Product CRUD"
+
+================================================================================
+
+🟡 MEMBER 3 — STOCK MANAGEMENT MODULE 📊
+Responsibilities: Stock In (adding items), Stock Out (selling/removing), Track current stock levels
+
+Files to Commit:
+- entity/StockTransaction.java
+- entity/StockReport.java
+- repository/TxtStockTransactionRepositoryImpl.java
+- service/StockService.java
+- controller/StockController.java
+- static/stock-list.html
+- static/stock-add.html
+- static/stock-edit.html
+- data/stock.txt
+
+Git Commands:
+git add src/main/java/com/supermarket/inventory/entity/StockTransaction.java
+git add src/main/java/com/supermarket/inventory/entity/StockReport.java
+git add src/main/java/com/supermarket/inventory/repository/TxtStockTransactionRepositoryImpl.java
+git add src/main/java/com/supermarket/inventory/service/StockService.java
+git add src/main/java/com/supermarket/inventory/controller/StockController.java
+git add src/main/resources/static/stock-list.html
+git add src/main/resources/static/stock-add.html
+git add src/main/resources/static/stock-edit.html
+git add src/main/resources/data/stock.txt
+git commit -m "Member 3: Stock Management Module - Stock Tracking"
+
+================================================================================
+
+🟠 MEMBER 4 — SUPPLIER MANAGEMENT MODULE 🚚
+Responsibilities: Add/update suppliers, Handle purchase orders (Local & International)
+
+Files to Commit:
+- entity/Supplier.java
+- entity/LocalSupplier.java
+- entity/InternationalSupplier.java
+- repository/TxtSupplierRepositoryImpl.java
+- service/SupplierService.java
+- controller/SupplierController.java
+- static/supplier-list.html
+- static/supplier-add.html
+- static/supplier-edit.html
+- data/suppliers.txt
+
+Git Commands:
+git add src/main/java/com/supermarket/inventory/entity/Supplier.java
+git add src/main/java/com/supermarket/inventory/entity/LocalSupplier.java
+git add src/main/java/com/supermarket/inventory/entity/InternationalSupplier.java
+git add src/main/java/com/supermarket/inventory/repository/TxtSupplierRepositoryImpl.java
+git add src/main/java/com/supermarket/inventory/service/SupplierService.java
+git add src/main/java/com/supermarket/inventory/controller/SupplierController.java
+git add src/main/resources/static/supplier-list.html
+git add src/main/resources/static/supplier-add.html
+git add src/main/resources/static/supplier-edit.html
+git add src/main/resources/data/suppliers.txt
+git commit -m "Member 4: Supplier Management Module"
+
+================================================================================
+
+🔴 MEMBER 5 — SALES & ORDER MANAGEMENT MODULE 🧾
+Responsibilities: Process sales transactions from Customer cart, Retail/Wholesale orders.
+
+Files to Commit:
+- entity/Order.java
+- entity/RetailOrder.java
+- entity/WholesaleOrder.java
+- entity/Invoice.java
+- repository/TxtOrderRepositoryImpl.java
+- service/SalesService.java
+- controller/SalesController.java
+- static/sales-list.html
+- static/sales-add.html
+- static/sales-edit.html
+- data/orders.txt
+- data/sales.txt
+
+Git Commands:
+git add src/main/java/com/supermarket/inventory/entity/Order.java
+git add src/main/java/com/supermarket/inventory/entity/RetailOrder.java
+git add src/main/java/com/supermarket/inventory/entity/WholesaleOrder.java
+git add src/main/java/com/supermarket/inventory/entity/Invoice.java
+git add src/main/java/com/supermarket/inventory/repository/TxtOrderRepositoryImpl.java
+git add src/main/java/com/supermarket/inventory/service/SalesService.java
+git add src/main/java/com/supermarket/inventory/controller/SalesController.java
+git add src/main/resources/static/sales-list.html
+git add src/main/resources/static/sales-add.html
+git add src/main/resources/static/sales-edit.html
+git add src/main/resources/data/orders.txt
+git add src/main/resources/data/sales.txt
+git commit -m "Member 5: Sales Module - Orders + Invoices"
+
+================================================================================
+
+🟣 MEMBER 6 — REPORTS MODULE 📈
+Responsibilities: View, edit, and refresh business reports.
+
+Files to Commit:
+- entity/Report.java
+- entity/SalesReport.java
+- service/ReportService.java
+- controller/ReportController.java
+- static/reports.html
+- data/reports.txt
+
+Git Commands:
+git add src/main/java/com/supermarket/inventory/entity/Report.java
+git add src/main/java/com/supermarket/inventory/entity/SalesReport.java
+git add src/main/java/com/supermarket/inventory/service/ReportService.java
+git add src/main/java/com/supermarket/inventory/controller/ReportController.java
+git add src/main/resources/static/reports.html
+git add src/main/resources/data/reports.txt
+git commit -m "Member 6: Reports Module"
+
+================================================================================
+
+🔗 SHARED FILES — COMMITTED BY TEAM LEAD
+- SupermarketApplication.java
+- config/WebConfig.java
+- resources/application.properties
+- static/index.html
+- static/css/style.css
+- pom.xml
+
+Git Commands:
+git add src/main/java/com/supermarket/inventory/SupermarketApplication.java
+git add src/main/java/com/supermarket/inventory/config/WebConfig.java
+git add src/main/resources/application.properties
+git add src/main/resources/static/index.html
+git add src/main/resources/static/css/style.css
+git add pom.xml
+git commit -m "Shared: App entry point, config, and CSS"
