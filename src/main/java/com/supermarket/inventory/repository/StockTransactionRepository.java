@@ -1,4 +1,4 @@
-package repository;
+package com.supermarket.inventory.repository;
 
 import com.supermarket.inventory.entity.StockTransaction;
 import java.util.List;
