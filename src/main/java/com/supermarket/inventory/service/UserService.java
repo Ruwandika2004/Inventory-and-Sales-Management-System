@@ -29,7 +29,6 @@ public class UserService {
         return repository.findAll();
     }
 
-
     public List<User> getAllCustomers() {
         return txtRepo.findAllCustomers();
     }
