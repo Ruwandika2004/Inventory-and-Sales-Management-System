@@ -14,6 +14,11 @@ public class StockReport extends Report {
     public void setTotalItemsInStock(int totalItemsInStock) { this.totalItemsInStock = totalItemsInStock; }
 
     @Override
+    public boolean validate() {
+        return super.validate() && totalItemsInStock >= 0;
+    }
+
+    @Override
     public String generateReportContent() {
         return "Stock Report [ID: " + getReportId() + "] - Total Items in Stock: " + totalItemsInStock;
     }

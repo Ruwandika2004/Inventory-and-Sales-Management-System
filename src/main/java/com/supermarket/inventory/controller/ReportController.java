@@ -36,7 +36,16 @@ public class ReportController {
         String id = (String) payload.get("id");
         String type = (String) payload.get("type");
         String date = (String) payload.get("date");
+        
+        if (id == null || id.trim().isEmpty() || type == null || type.trim().isEmpty()) {
+            throw new IllegalArgumentException("ID and Type are required for manual reports.");
+        }
+        
         double value = Double.parseDouble(payload.get("value").toString());
+        if (value < 0) {
+            throw new IllegalArgumentException("Report value cannot be negative.");
+        }
+        
         service.createManualReport(type, id, value, date);
     }
 
@@ -60,12 +69,19 @@ public class ReportController {
         String type = (String) payload.get("type");
         String date = (String) payload.get("date");
         
+        if (oldId == null || newId == null || type == null) {
+            throw new IllegalArgumentException("Old ID, New ID, and Type are required for updates.");
+        }
+
+        double value = Double.parseDouble(payload.get("value").toString());
+        if (value < 0) {
+            throw new IllegalArgumentException("Updated value cannot be negative.");
+        }
+        
         if ("sales".equals(type)) {
-            double rev = Double.parseDouble(payload.get("value").toString());
-            service.updateReport(oldId, newId, rev, 0, date);
+            service.updateReport(oldId, newId, value, 0, date);
         } else {
-            int stock = Integer.parseInt(payload.get("value").toString());
-            service.updateReport(oldId, newId, 0, stock, date);
+            service.updateReport(oldId, newId, 0, (int) value, date);
         }
     }
 

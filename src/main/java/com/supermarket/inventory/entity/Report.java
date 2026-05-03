@@ -32,5 +32,13 @@ public abstract class Report {
     public LocalDateTime getGeneratedAt()            { return generatedAt; }
     public void setGeneratedAt(LocalDateTime g)      { this.generatedAt = g; }
 
+    /**
+     * Validates the report.
+     * @return true if valid, false otherwise.
+     */
+    public boolean validate() {
+        return reportId != null && !reportId.trim().isEmpty();
+    }
+
     public abstract String generateReportContent();
 }

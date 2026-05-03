@@ -14,6 +14,11 @@ public class SalesReport extends Report {
     public void setTotalRevenue(double totalRevenue) { this.totalRevenue = totalRevenue; }
 
     @Override
+    public boolean validate() {
+        return super.validate() && totalRevenue >= 0;
+    }
+
+    @Override
     public String generateReportContent() {
         return "Sales Report [ID: " + getReportId() + "] - Total Revenue: LKR " + totalRevenue;
     }
