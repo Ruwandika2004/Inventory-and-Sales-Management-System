@@ -19,15 +19,20 @@ public class UserService {
     }
 
 
+    public void registerUser(User user) {
+        repository.save(user);
+    }
+
+
     public String login(String username, String password) {
         Optional<User> user = repository.findByUsernameAndPassword(username, password);
         return user.map(User::getDashboardRoute).orElse("ERROR");
     }
 
-
     public List<User> getAllUsers() {
         return repository.findAll();
     }
+
 
     public List<User> getAllCustomers() {
         return txtRepo.findAllCustomers();
