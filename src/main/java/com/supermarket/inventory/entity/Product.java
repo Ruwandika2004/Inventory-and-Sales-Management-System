@@ -1,6 +1,9 @@
 package com.supermarket.inventory.entity;
 
-
+/**
+ * Abstract Product class — demonstrates Abstraction and Inheritance (OOP).
+ * Concrete subclasses: PerishableProduct, Electronics
+ */
 public abstract class Product {
     private String id;
     private String name;
@@ -16,25 +19,17 @@ public abstract class Product {
         this.category = category;
     }
 
-    public String getId()                    {
-        return id; }
-    public void setId(String id)             {
-        this.id = id; }
+    public String getId()                    { return id; }
+    public void setId(String id)             { this.id = id; }
 
-    public String getName()                  {
-        return name; }
-    public void setName(String name)         {
-        this.name = name; }
+    public String getName()                  { return name; }
+    public void setName(String name)         { this.name = name; }
 
-    public double getPrice()                 {
-        return price; }
-    public void setPrice(double price)       {
-        this.price = price; }
+    public double getPrice()                 { return price; }
+    public void setPrice(double price)       { this.price = price; }
 
-    public String getCategory()              {
-        return category; }
-    public void setCategory(String category) {
-        this.category = category; }
+    public String getCategory()              { return category; }
+    public void setCategory(String category) { this.category = category; }
 
     // Polymorphism — overridden by each subclass
     public abstract String getHandlingInstructions();
