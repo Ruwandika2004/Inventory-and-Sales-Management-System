@@ -6,6 +6,22 @@
     <title>FreshMart — Product List</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Small custom layout style to handle alignment of filter elements */
+        .filter-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
 <nav class="sidebar">
@@ -37,7 +53,14 @@
         <div class="card">
             <div class="card-header">
                 <h3>All Products</h3>
-                <div class="search-bar"><input type="text" id="searchBox" placeholder="Search products…" oninput="filter()"></div>
+                <div class="filter-container">
+                    <select id="typeFilter" class="filter-select" onchange="filter()">
+                        <option value="All">All Types</option>
+                        <option value="Perishable">Perishable Only</option>
+                        <option value="Electronics">Electronics Only</option>
+                    </select>
+                    <div class="search-bar"><input type="text" id="searchBox" placeholder="Search products…" oninput="filter()"></div>
+                </div>
             </div>
             <div class="table-wrapper">
                 <table>
@@ -52,7 +75,7 @@
 <script>
     let all = [];
 
-    // data lode
+    // Fetch product data from the backend API
     async function load() {
         try {
             const res = await fetch('http://localhost:8080/api/products');
@@ -63,6 +86,7 @@
         }
     }
 
+    // Dynamically generate and render table rows based on product array
     function render(data) {
         const tbody = document.getElementById('list');
         if (!data || !data.length) {
@@ -90,7 +114,7 @@
         }).join('');
     }
 
-    // Delete Function
+    // Handle product deletion via DELETE HTTP request execution
     async function deleteProduct(id) {
         if (confirm('Are you sure you want to delete product ' + id + '?')) {
             try {
@@ -99,7 +123,7 @@
                 });
                 if (res.ok) {
                     alert('Product deleted successfully!');
-                    load(); // List Refresh
+                    load(); // Trigger database refresh logic to update view states
                 } else {
                     alert('Failed to delete product.');
                 }
@@ -109,9 +133,24 @@
         }
     }
 
+    // Combined dual-filter criteria targeting search queries and product categories concurrently
     function filter() {
         const q = document.getElementById('searchBox').value.toLowerCase();
-        render(all.filter(p => p.name.toLowerCase().includes(q) || p.id.toLowerCase().includes(q)));
+        const selectedType = document.getElementById('typeFilter').value;
+
+        let filteredList = all;
+
+        // 1. Evaluate filter criteria based on product category type selection
+        if (selectedType !== 'All') {
+            filteredList = filteredList.filter(p => p.category === selectedType);
+        }
+
+        // 2. Evaluate filter criteria against user query match (ID / Name properties)
+        filteredList = filteredList.filter(p =>
+            p.name.toLowerCase().includes(q) || p.id.toLowerCase().includes(q)
+        );
+
+        render(filteredList);
     }
 
     load();
