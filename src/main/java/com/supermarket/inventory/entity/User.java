@@ -1,18 +1,19 @@
 package com.supermarket.inventory.entity;
 
+
 public abstract class User {
     private String username;
     private String password;
     private String role;
 
-    public User() {
-    }
+    public User() {}
 
     public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
-        this.role = role;
+        this.role     = role;
     }
+
     public String getUsername()              { return username; }
     public void setUsername(String username) { this.username = username; }
 
@@ -25,4 +26,3 @@ public abstract class User {
 
     public abstract String getDashboardRoute();
 }
-
