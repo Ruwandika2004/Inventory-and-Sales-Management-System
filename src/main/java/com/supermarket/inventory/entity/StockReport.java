@@ -18,3 +18,4 @@ public class StockReport extends Report {
         return "Stock Report [ID: " + getReportId() + "] - Total Items in Stock: " + totalItemsInStock;
     }
 }
+
