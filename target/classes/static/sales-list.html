@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreshMart — Sales Records</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2=family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .order-type-badge { padding:3px 10px; border-radius:99px; font-size:12px; font-weight:600; }
@@ -46,7 +46,6 @@
     </div>
 
     <div class="page-content">
-        <!-- Summary chips -->
         <div class="summary-row">
             <div class="summary-chip">
                 <p>Total Orders</p>
@@ -101,7 +100,7 @@
     function renderOrders(data) {
         const tbody = document.getElementById('list');
         if (!data.length) {
-            tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-muted);padding:40px">No sales recorded yet. Click "+ New Sale" to add one.</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px">No sales recorded yet.</td></tr>';
             return;
         }
         tbody.innerHTML = data.map(s => {
@@ -112,9 +111,10 @@
             const total   = isWholesale ? (base - adjAmt) : (base + adjAmt);
             const typeLabel = isWholesale ? 'Wholesale' : 'Retail';
             const typeClass = isWholesale ? 'wholesale' : 'retail';
-            const adjLabel  = isWholesale ? `−LKR ${adjAmt.toFixed(2)} (${(rate*100).toFixed(0)}% disc)` : `+LKR ${adjAmt.toFixed(2)} (${(rate*100).toFixed(0)}% tax)`;
+            const adjLabel  = isWholesale ? `−LKR ${adjAmt.toFixed(2)} (${(rate*100).toFixed(0)}%)` : `+LKR ${adjAmt.toFixed(2)} (${(rate*100).toFixed(0)}%)`;
             const dateStr   = s.orderDate ? new Date(s.orderDate).toLocaleDateString() : '—';
 
+            // Fixed template literal literal missing $ sign syntax
             return `<tr>
                 <td><code style="font-size:12px;background:#f1f5f9;padding:2px 8px;border-radius:4px">${s.orderId}</code></td>
                 <td><span class="order-type-badge ${typeClass}">${typeLabel}</span></td>
@@ -123,7 +123,7 @@
                 <td><strong>LKR ${total.toFixed(2)}</strong></td>
                 <td class="text-muted">${dateStr}</td>
                 <td>
-                    <a href="sales-edit.html?id=LKR {s.orderId}&base=LKR {base}&type=LKR {typeLabel}" class="btn btn-blue btn-sm">Edit</a>
+                    <a href="sales-edit.html?id=${s.orderId}&base=${base}&type=${typeLabel}" class="btn btn-blue btn-sm">Edit</a>
                 </td>
             </tr>`;
         }).join('');

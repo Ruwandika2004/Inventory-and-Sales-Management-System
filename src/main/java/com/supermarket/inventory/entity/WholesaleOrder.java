@@ -18,4 +18,3 @@ public class WholesaleOrder extends Order {
         return getBaseAmount() - (getBaseAmount() * discountRate);
     }
 }
-
